@@ -1,4 +1,4 @@
-int add( int a, int b ){ return a+b; }
-int sub( int a, int b ){ return a-b; }
-int mul( int a, int b ){ return a*b; }
-int div( int a, int b ){ return a/b; }
+int add( void *a, void *b ){ return (*a)+(*b); }
+int sub( void *a, void *b ){ return (*a)-(*b); }
+int mul( void *a, void *b ){ return (*a)*(*b); }
+int div( void *a, void *b ){ return (*a)/(*b); }
