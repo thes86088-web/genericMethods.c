@@ -28,11 +28,11 @@ void *sub_doub( void *a, void *b, void *result ){
   *((double *)result) = *((double *)a) - *((double *)b) ; 
 }
 
-void *sub_short( void *a, void *b, void *result ){ 
+void *sub_short( void *a, void *b, void *result ){ //bug
   *((short *)result) = *((short *)a) - *((short *)b) ; 
 }
 
-void *sub_ll( void *a, void *b, void *result ){ 
+void *sub_ll( void *a, void *b, void *result ){ //bug
   *((long long *)result) = *((long long *)a) + *((long long *)b) ; 
 }
 
@@ -53,7 +53,7 @@ void *mul_ll( void *a, void *b, void *result ){
 }
 
 void *divi_int( void *a, void *b, void *result ){ 
-  *((int *)result) = (*((double *)a)) / (*((double *)b) ) ; 
+  *((int *)result) = (*((int *)a)) / (*((int *)b) ) ; 
 }
 
 void *divi_doub( void *a, void *b, void *result ){ 
@@ -64,7 +64,7 @@ void *divi_short( void *a, void *b, void *result ){
   *((short *)result) = (*((short *)a)) / (*((short *)b) ) ; 
 }
 
-void *divi_ll( void *a, void *b, void *result ){ 
+void *divi_ll( void *a, void *b, void *result ){ //bug
   *((long long *)result) = (*((long long *)a)) / (*((long long *)b) ) ; 
 }
 
@@ -96,10 +96,10 @@ void *funcCalled( void *a, void *b, size_t size, int operation )
 
 int main()
 {
- char op = { '+', '-', '*', '/' };
- int a = 10; int b = 20;                   for( int i = 0;i<4;i++) printf(" %d %c %d = %d",   a, op[i], b, *((int *)funcCalled( &a, &b, sizeof(a), i )) );
- //double a = 10; double b = 20;           for( int i = 0;i<4;i++) printf(" %lf + %lf = %lf", a, op[i], b, *((double *)funcCalled( &a, &b, sizeof(a), i )) );
- //short a = 10; short b = 20;             for( int i = 0;i<4;i++) printf(" %d + %d = %d",    a, op[i], b, *((short *)funcCalled( &a, &b, sizeof(a), i  )));
- //long long a = 10; long long b = 20;     for( int i = 0;i<4;i++) printf(" %ld + %ld = %ld", a, op[i], b, *((long long *)funcCalled( &a, &b, sizeof(a), i )) );
+ char op[4] = { '+', '-', '*', '/' };
+// int a = 10; int b = 20;                   for( int i = 0;i<4;i++) printf(" %d %c %d = %d \n",   a, op[i], b, *((int *)funcCalled( &a, &b, sizeof(a), i )) );
+ //double a = 10; double b = 20;           for( int i = 0;i<4;i++) printf(" %lf %c %lf = %lf \n", a, op[i], b, *((double *)funcCalled( &a, &b, sizeof(a), i )) );
+ //short a = 10; short b = 20;             for( int i = 0;i<4;i++) printf(" %d %c %d = %d \n",    a, op[i], b, *((short *)funcCalled( &a, &b, sizeof(a), i  )));
+ //long long a = 10; long long b = 20;     for( int i = 0;i<4;i++) printf(" %ld %c %ld = %ld \n", a, op[i], b, *((long long *)funcCalled( &a, &b, sizeof(a), i )) );
 
 }
