@@ -2,18 +2,18 @@
 #include <stdlib.h>
 
 
-int *add( int(*a), int(*b) )
+int *add( int *a, int *b )
 { int *t = malloc(sizeof(int));
  *t = (*a)+(*b);
   return t; }
-int *sub( int(*a), int(*b) ){ 
+int *sub( int *a , int *b ){ 
   int *t = malloc(sizeof(int));
  *t = (*a)-(*b);
   return t; }
-int *mul( int(*a), int(*b) ){ 
+int *mul( int *a , int *b  ){ 
   { int *t = malloc(sizeof(int));
  *t = (*a)*(*b);
-  return t; }int *divi( int(*a), int(*b) ){ 
+  return t; }int *divi( int *a , int *b  ){ 
     { int *t = malloc(sizeof(int));
  *t = ((*a)/(*b)) ;
   return t; }
