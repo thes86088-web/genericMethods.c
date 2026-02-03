@@ -11,14 +11,15 @@ int *sub( int *a , int *b ){
  *t = (*a)-(*b);
   return t; }
 int *mul( int *a , int *b  ){ 
-  { int *t = malloc(sizeof(int));
+    int *t = malloc(sizeof(int));
  *t = (*a)*(*b);
-  return t; }int *divi( int *a , int *b  ){ 
-    { int *t = malloc(sizeof(int));
+  return t; }
+ int *divi( int *a , int *b  ){ 
+ int *t = malloc(sizeof(int));
  *t = ((*a)/(*b)) ;
   return t; }
 
-int *((*func)[4])(int *, int *) = {add, sub, mul, divi} ;
+int *(*func[4])(int *, int *) = {add, sub, mul, divi} ;
 
 int main()
 {
