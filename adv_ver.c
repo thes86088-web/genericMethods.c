@@ -97,9 +97,9 @@ void *funcCalled( void *a, void *b, size_t size, int operation )
 int main()
 {
  char op[4] = { '+', '-', '*', '/' };
-// int a = 10; int b = 20;                   for( int i = 0;i<4;i++) printf(" %d %c %d = %d \n",   a, op[i], b, *((int *)funcCalled( &a, &b, sizeof(a), i )) );
- //double a = 10; double b = 20;           for( int i = 0;i<4;i++) printf(" %lf %c %lf = %lf \n", a, op[i], b, *((double *)funcCalled( &a, &b, sizeof(a), i )) );
+ //int a = 10; int b = 20;                   for( int i = 0;i<4;i++) printf(" %d %c %d = %d \n",   a, op[i], b, *((int *)funcCalled( &a, &b, sizeof(a), i )) );
+// double a = 10; double b = 20;           for( int i = 0;i<4;i++) printf(" %lf %c %lf = %lf \n", a, op[i], b, *((double *)funcCalled( &a, &b, sizeof(a), i )) );
  //short a = 10; short b = 20;             for( int i = 0;i<4;i++) printf(" %d %c %d = %d \n",    a, op[i], b, *((short *)funcCalled( &a, &b, sizeof(a), i  )));
- //long long a = 10; long long b = 20;     for( int i = 0;i<4;i++) printf(" %ld %c %ld = %ld \n", a, op[i], b, *((long long *)funcCalled( &a, &b, sizeof(a), i )) );
+ long long a = 10; long long b = 20;     for( int i = 0;i<4;i++) printf(" %ld %c %ld = %ld \n", a, op[i], b, *((long long *)funcCalled( &a, &b, sizeof(a), i )) );
 
 }
