@@ -1,8 +1,17 @@
-void *add( void *a, void *b ){ 
+void *add_int( void *a, void *b, void *result ){ 
 
-  void *result = malloc( sizeof(a) );
-  result = (void *)( (*((type *)a)) + (*((type *)b)) )  ;
-  return result ;
+}
+
+void *add_doub( void *a, void *b, void *result ){ 
+
+}
+
+void *add_short( void *a, void *b, void *result ){ 
+
+}
+
+void *add_byte( void *a, void *b, void *result ){ 
+
 }
 
 size_t size = sizeof(a)>sizeof(b) ? sizeof(a) : sizeof(b) ;
