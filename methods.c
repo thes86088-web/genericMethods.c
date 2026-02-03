@@ -1,4 +1,6 @@
-#include <stddef.h>'
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void *add_int( void *a, void *b, void *result ){ 
   *((int *)result) = *((int *)a) + *((int *)b) ; 
@@ -25,7 +27,7 @@ void *funcCalled( void *a, void *b, size_t size )
   void *result = malloc(size);
   int type = 0;
   if( size == sizeof(int) )  type=0 ;
-  else if( size == sizeof(double) ) tyre=1 ;
+  else if( size == sizeof(double) ) type=1 ;
   else if( size == sizeof(long long) ) type=2 ;
   else type = 3; //consider long long if other cases fail
   
