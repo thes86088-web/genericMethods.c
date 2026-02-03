@@ -31,3 +31,12 @@ void *funcCalled( void *a, void *b, size_t size, void*( *func[4] )(void *, void 
   
   return result ;
 }
+
+int main()
+{
+ int a = 10; int b = 20;          int sol = *((int *)funcCalled( &a, &b, sizeof(a) ));        printf(" %d + %d = %d", a, b, sol);
+ //double a = 10; double b = 20;  double sol = *((double *)funcCalled( &a, &b, sizeof(a) ));  printf(" %lf + %lf = %lf", a, b, sol);
+ //short a = 10; short b = 20;    short sol = *((short *)funcCalled( &a, &b, sizeof(a)  ));   printf(" %d + %d = %d", (int)a, (int)b, (int)sol);
+ //byte a = 10; byte b = 20;      byte sol = *((byte *)funcCalled( &a, &b, sizeof(a)  ));     printf(" %d + %d = %d", (int)a, (int)b, (int)sol);
+
+}
