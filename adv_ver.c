@@ -28,7 +28,7 @@ void *sub_doub( void *a, void *b, void *result ){
   *((double *)result) = *((double *)a) - *((double *)b) ; 
 }
 
-void *sub_short( void *a, void *b, void *result ){ //bug 10-20 = 30
+void *sub_short( void *a, void *b, void *result ){ 
   *((short *)result) = *((short *)a) - *((short *)b) ; 
 }
 
