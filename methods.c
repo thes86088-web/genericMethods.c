@@ -1,4 +1,6 @@
-int add( void *a, void *b ){ return (*a)+(*b); }
-int sub( void *a, void *b ){ return (*a)-(*b); }
-int mul( void *a, void *b ){ return (*a)*(*b); }
-int div( void *a, void *b ){ return (*a)/(*b); }
+void *add( void *a, void *b ){ 
+
+  void *result = malloc( sizeof(a) );
+  result = (void *)( (*((type *)a)) + (*((type *)b)) )  ;
+  return result ;
+}
