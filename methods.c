@@ -44,3 +44,4 @@ int main()
  //long long a = 10; long long b = 20;      long long sol = *((long long *)funcCalled( &a, &b, sizeof(a)  ));     printf(" %d + %d = %d", a, b, sol);
 
 }
+//works for the given cases now
