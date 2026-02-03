@@ -96,10 +96,10 @@ void *funcCalled( void *a, void *b, size_t size, int operation )
 
 int main()
 {
- int a = 10; int b = 20;          int sol = *((int *)funcCalled( &a, &b, sizeof(a) ));        printf(" %d + %d = %d", a, b, sol);
- //double a = 10; double b = 20;  double sol = *((double *)funcCalled( &a, &b, sizeof(a) ));  printf(" %lf + %lf = %lf", a, b, sol);
- //short a = 10; short b = 20;    short sol = *((short *)funcCalled( &a, &b, sizeof(a)  ));   printf(" %d + %d = %d", (int)a, (int)b, (int)sol);
- //long long a = 10; long long b = 20;      long long sol = *((long long *)funcCalled( &a, &b, sizeof(a)  ));     printf(" %ld + %ld = %ld", a, b, sol);
+ char op = { '+', '-', '*', '/' };
+ int a = 10; int b = 20;                   for( int i = 0;i<4;i++) printf(" %d %c %d = %d",   a, op[i], b, *((int *)funcCalled( &a, &b, sizeof(a), i )) );
+ //double a = 10; double b = 20;           for( int i = 0;i<4;i++) printf(" %lf + %lf = %lf", a, op[i], b, *((double *)funcCalled( &a, &b, sizeof(a), i )) );
+ //short a = 10; short b = 20;             for( int i = 0;i<4;i++) printf(" %d + %d = %d",    a, op[i], b, *((short *)funcCalled( &a, &b, sizeof(a), i  )));
+ //long long a = 10; long long b = 20;     for( int i = 0;i<4;i++) printf(" %ld + %ld = %ld", a, op[i], b, *((long long *)funcCalled( &a, &b, sizeof(a), i )) );
 
 }
-//works for the given cases now
