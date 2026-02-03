@@ -1,9 +1,24 @@
-int *add( int(*a), int(*b) ){ return (*a)+(*b); }
-int *sub( int(*a), int(*b) ){ return (*a)-(*b); }
-int *mul( int(*a), int(*b) ){ return (*a)*(*b); }
-int *divi( int(*a), int(*b) ){ return (*a)/(*b); }
+#include <stdio.h>
+#include <stdlib.h>
 
-int *((*func)[4])(int *, int *) = {add, sub, mul, divi};
+
+int *add( int(*a), int(*b) )
+{ int *t = malloc(sizeof(int));
+ *t = (*a)+(*b);
+  return t; }
+int *sub( int(*a), int(*b) ){ 
+  int *t = malloc(sizeof(int));
+ *t = (*a)-(*b);
+  return t; }
+int *mul( int(*a), int(*b) ){ 
+  { int *t = malloc(sizeof(int));
+ *t = (*a)*(*b);
+  return t; }int *divi( int(*a), int(*b) ){ 
+    { int *t = malloc(sizeof(int));
+ *t = ((*a)/(*b)) ;
+  return t; }
+
+int *((*func)[4])(int *, int *) = {add, sub, mul, divi} ;
 
 int main()
 {
