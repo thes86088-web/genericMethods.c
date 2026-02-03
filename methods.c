@@ -1,17 +1,17 @@
 void *add_int( void *a, void *b, void *result ){ 
-
+  *((int *)result) = *((int *)a) + *((int *)b) ; 
 }
 
 void *add_doub( void *a, void *b, void *result ){ 
-
+  *((double *)result) = *((double *)a) + *((double *)b) ; 
 }
 
 void *add_short( void *a, void *b, void *result ){ 
-
+  *((short *)result) = *((short *)a) + *((short *)b) ; 
 }
 
 void *add_byte( void *a, void *b, void *result ){ 
-
+  *((byte *)result) = *((byte *)a) + *((byte *)b) ; 
 }
 
 size_t size = sizeof(a)>sizeof(b) ? sizeof(a) : sizeof(b) ;
