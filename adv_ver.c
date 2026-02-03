@@ -33,7 +33,7 @@ void *sub_short( void *a, void *b, void *result ){ //bug 10-20 = 30
 }
 
 void *sub_ll( void *a, void *b, void *result ){ //bug 10-20 = very large fixed -ve number
-  *((long long *)result) = *((long long *)a) + *((long long *)b) ; 
+  *((long long *)result) = *((long long *)a) - *((long long *)b) ; 
 }
 
 void *mul_int( void *a, void *b, void *result ){ 
@@ -86,7 +86,7 @@ void *funcCalled( void *a, void *b, size_t size, int operation )
   int type = 0;
   if( size == sizeof(int) )  type=0 ;
   else if( size == sizeof(double) ) type=1 ;
-  else if( size == sizeof(long long) ) type=2 ;
+  else if( size == sizeof(short) ) type=2 ;
   else type = 3; //consider long long if other cases fail
   
    func[type][operation]( a, b, result );
